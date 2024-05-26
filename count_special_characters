@@ -1,0 +1,27 @@
+import string
+
+def count_special_characters(strings):
+    """
+    Returns the total number of special characters in an array of strings.
+
+    :param strings: List of strings.
+    :return: Total number of special characters in the list of strings.
+    """
+    # Define special characters
+    special_characters = string.punctuation + string.whitespace + string.digits + string.ascii_letters
+
+    # Initialize the special character counter
+    total_special_characters = 0
+
+    # Iterate over each string in the array of strings
+    for string in strings:
+        # Add the number of special characters in the current string to the total counter
+        for char in string:
+            if char not in special_characters:
+                total_special_characters += 1
+    
+    return total_special_characters
+
+# Example usage:
+strings = ["hello!", "world@", "#python3", "programming%"]
+print(count_special_characters(strings))  # Output: 3
